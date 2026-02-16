@@ -1,0 +1,749 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ConnectDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="ConnectDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ConnectDBResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cQuestion" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cAnswer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertDataResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyLogIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="lEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="lPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyLogInResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyLogInResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyEmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyAnswer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vAnswer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyAnswerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="VerifyAnswerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="uPassWord" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uEmail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePersonalID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePersonalIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePersonalIDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePersonalName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePersonalNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePersonalNameResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePersonalEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePersonalEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePersonalEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePersonalPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePersonalPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePersonalPasswordResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccExists">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AccExistsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AccExistsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAccount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cAccNum" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="cAccDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="cAccBalance" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAccountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateAccountResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyUserAccounts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyUserAccountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyUserAccountsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyTransferAccounts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyTransferAccountsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyTransferAccountsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTransAmount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckTransAmountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckTransAmountResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransferMoney">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sourceAccID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="destinationAccID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="transferAmount" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TransferMoneyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TransferMoneyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="accID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ConnectDBSoapIn">
+    <wsdl:part name="parameters" element="tns:ConnectDB" />
+  </wsdl:message>
+  <wsdl:message name="ConnectDBSoapOut">
+    <wsdl:part name="parameters" element="tns:ConnectDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertDataSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertData" />
+  </wsdl:message>
+  <wsdl:message name="InsertDataSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyLogInSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyLogIn" />
+  </wsdl:message>
+  <wsdl:message name="VerifyLogInSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyLogInResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyEmail" />
+  </wsdl:message>
+  <wsdl:message name="VerifyEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyAnswerSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyAnswer" />
+  </wsdl:message>
+  <wsdl:message name="VerifyAnswerSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyAnswerResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePassword" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonalIDSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePersonalID" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonalIDSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePersonalIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonalNameSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePersonalName" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonalNameSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePersonalNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonalEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePersonalEmail" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonalEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePersonalEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonalPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePersonalPassword" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePersonalPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePersonalPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="AccExistsSoapIn">
+    <wsdl:part name="parameters" element="tns:AccExists" />
+  </wsdl:message>
+  <wsdl:message name="AccExistsSoapOut">
+    <wsdl:part name="parameters" element="tns:AccExistsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAccountSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAccount" />
+  </wsdl:message>
+  <wsdl:message name="CreateAccountSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyUserAccountsSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyUserAccounts" />
+  </wsdl:message>
+  <wsdl:message name="VerifyUserAccountsSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyUserAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyTransferAccountsSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyTransferAccounts" />
+  </wsdl:message>
+  <wsdl:message name="VerifyTransferAccountsSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyTransferAccountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckTransAmountSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckTransAmount" />
+  </wsdl:message>
+  <wsdl:message name="CheckTransAmountSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckTransAmountResponse" />
+  </wsdl:message>
+  <wsdl:message name="TransferMoneySoapIn">
+    <wsdl:part name="parameters" element="tns:TransferMoney" />
+  </wsdl:message>
+  <wsdl:message name="TransferMoneySoapOut">
+    <wsdl:part name="parameters" element="tns:TransferMoneyResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyTransaction" />
+  </wsdl:message>
+  <wsdl:message name="VerifyTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyTransactionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DbWebServiceSoap">
+    <wsdl:operation name="ConnectDB">
+      <wsdl:input message="tns:ConnectDBSoapIn" />
+      <wsdl:output message="tns:ConnectDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertData">
+      <wsdl:input message="tns:InsertDataSoapIn" />
+      <wsdl:output message="tns:InsertDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyLogIn">
+      <wsdl:input message="tns:VerifyLogInSoapIn" />
+      <wsdl:output message="tns:VerifyLogInSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyEmail">
+      <wsdl:input message="tns:VerifyEmailSoapIn" />
+      <wsdl:output message="tns:VerifyEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAnswer">
+      <wsdl:input message="tns:VerifyAnswerSoapIn" />
+      <wsdl:output message="tns:VerifyAnswerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <wsdl:input message="tns:UpdatePasswordSoapIn" />
+      <wsdl:output message="tns:UpdatePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalID">
+      <wsdl:input message="tns:UpdatePersonalIDSoapIn" />
+      <wsdl:output message="tns:UpdatePersonalIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalName">
+      <wsdl:input message="tns:UpdatePersonalNameSoapIn" />
+      <wsdl:output message="tns:UpdatePersonalNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalEmail">
+      <wsdl:input message="tns:UpdatePersonalEmailSoapIn" />
+      <wsdl:output message="tns:UpdatePersonalEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalPassword">
+      <wsdl:input message="tns:UpdatePersonalPasswordSoapIn" />
+      <wsdl:output message="tns:UpdatePersonalPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AccExists">
+      <wsdl:input message="tns:AccExistsSoapIn" />
+      <wsdl:output message="tns:AccExistsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <wsdl:input message="tns:CreateAccountSoapIn" />
+      <wsdl:output message="tns:CreateAccountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyUserAccounts">
+      <wsdl:input message="tns:VerifyUserAccountsSoapIn" />
+      <wsdl:output message="tns:VerifyUserAccountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyTransferAccounts">
+      <wsdl:input message="tns:VerifyTransferAccountsSoapIn" />
+      <wsdl:output message="tns:VerifyTransferAccountsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransAmount">
+      <wsdl:input message="tns:CheckTransAmountSoapIn" />
+      <wsdl:output message="tns:CheckTransAmountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TransferMoney">
+      <wsdl:input message="tns:TransferMoneySoapIn" />
+      <wsdl:output message="tns:TransferMoneySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="VerifyTransaction">
+      <wsdl:input message="tns:VerifyTransactionSoapIn" />
+      <wsdl:output message="tns:VerifyTransactionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DbWebServiceSoap" type="tns:DbWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConnectDB">
+      <soap:operation soapAction="http://tempuri.org/ConnectDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertData">
+      <soap:operation soapAction="http://tempuri.org/InsertData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyLogIn">
+      <soap:operation soapAction="http://tempuri.org/VerifyLogIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyEmail">
+      <soap:operation soapAction="http://tempuri.org/VerifyEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAnswer">
+      <soap:operation soapAction="http://tempuri.org/VerifyAnswer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap:operation soapAction="http://tempuri.org/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalID">
+      <soap:operation soapAction="http://tempuri.org/UpdatePersonalID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalName">
+      <soap:operation soapAction="http://tempuri.org/UpdatePersonalName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalEmail">
+      <soap:operation soapAction="http://tempuri.org/UpdatePersonalEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalPassword">
+      <soap:operation soapAction="http://tempuri.org/UpdatePersonalPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccExists">
+      <soap:operation soapAction="http://tempuri.org/AccExists" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <soap:operation soapAction="http://tempuri.org/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyUserAccounts">
+      <soap:operation soapAction="http://tempuri.org/VerifyUserAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyTransferAccounts">
+      <soap:operation soapAction="http://tempuri.org/VerifyTransferAccounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransAmount">
+      <soap:operation soapAction="http://tempuri.org/CheckTransAmount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferMoney">
+      <soap:operation soapAction="http://tempuri.org/TransferMoney" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyTransaction">
+      <soap:operation soapAction="http://tempuri.org/VerifyTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DbWebServiceSoap12" type="tns:DbWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ConnectDB">
+      <soap12:operation soapAction="http://tempuri.org/ConnectDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertData">
+      <soap12:operation soapAction="http://tempuri.org/InsertData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyLogIn">
+      <soap12:operation soapAction="http://tempuri.org/VerifyLogIn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyEmail">
+      <soap12:operation soapAction="http://tempuri.org/VerifyEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyAnswer">
+      <soap12:operation soapAction="http://tempuri.org/VerifyAnswer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePassword">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalID">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePersonalID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalName">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePersonalName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalEmail">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePersonalEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePersonalPassword">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePersonalPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AccExists">
+      <soap12:operation soapAction="http://tempuri.org/AccExists" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccount">
+      <soap12:operation soapAction="http://tempuri.org/CreateAccount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyUserAccounts">
+      <soap12:operation soapAction="http://tempuri.org/VerifyUserAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyTransferAccounts">
+      <soap12:operation soapAction="http://tempuri.org/VerifyTransferAccounts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransAmount">
+      <soap12:operation soapAction="http://tempuri.org/CheckTransAmount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TransferMoney">
+      <soap12:operation soapAction="http://tempuri.org/TransferMoney" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VerifyTransaction">
+      <soap12:operation soapAction="http://tempuri.org/VerifyTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DbWebService">
+    <wsdl:port name="DbWebServiceSoap" binding="tns:DbWebServiceSoap">
+      <soap:address location="https://localhost:44385/DbWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DbWebServiceSoap12" binding="tns:DbWebServiceSoap12">
+      <soap12:address location="https://localhost:44385/DbWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
